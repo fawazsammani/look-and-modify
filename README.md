@@ -33,7 +33,7 @@ Then download the caption data folder from [here](https://drive.google.com/open?
 `Bottom up features mapping to images`: The mapping of the bottom up features to their corresponding COCO images in the corresponding order.
 
 
-For more information on the preperation of this dataset, see the folder `data preperation`. Here, the previous captions are embedded first using Google's Universal Sentence Encoder available at TensorFlow Hub [here](https://tfhub.dev/google/universal-sentence-encoder/2) and are loaded to the model for faster processing. You can find how to extract the features from the sentence in the folder `data preperation`. If you would like to implement your own DAN, use the following code (also provided in `util/dan.py`) which makes use of the GLoVe word embeddings. You can download the 300-d 6B trained word vectors from [here](https://nlp.stanford.edu/projects/glove/) for use in this function. Moreover, you may ignore the `load embedding` function if you'd like to train the word vectors from scratch using `nn.Embedding`:
+For more information on the preperation of this dataset, see the folder `data preperation`. Here, the previous captions are embedded first using Google's Universal Sentence Encoder available at TensorFlow Hub [here](https://tfhub.dev/google/universal-sentence-encoder/2) and are loaded to the model for faster processing. You can find how to extract the features from the sentence in the folder `data preperation`. If you would like to implement your own DAN, use the code provided in `util/dan.py` which makes use of the GLoVe word embeddings. You can download the 300-d 6B trained word vectors from [here](https://nlp.stanford.edu/projects/glove/) for use in this function. Moreover, you may ignore the `load embedding` function if you'd like to train the word vectors from scratch using `nn.Embedding`.
 
 In our paper, we make use of variational dropout to effectively regularize our language model, which samples one mask and uses it repeatedly across all timesteps. In that case, all timesteps of the language model receive the same dropout mask. This implementation is included here as well. If you change the dimension of your LSTM hidden state, make sure to adjust accordingly in the `getLockedDropooutMask` function. 
 
@@ -49,15 +49,19 @@ If you want to do evaluation on COCO, download the COCO API from [here](https://
 Use the repository [here](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning) to extract the image features to a `.hd5` file.
 
 Then download the caption data folder from [here](https://drive.google.com/open?id=1QOU8wp_Mr-wT5_fcH3vaAPIw8qO7BPRp) which includes the following: 
+
 `Caption utilities`: a dictionary file with the following: `{"COCO image name": {"caption": "previous caption to modify", "embedding": [512-d DAN embedding of previous caption], "attributes": [the indiced of the 5 extracted attributes], "image_ids": the COCO image id}`
 `COCO image names in the corresponding order. 
+
 `Annotations`: The training annotations
+
 `Caption lengths`: The training captions length
+
 `Wordmap`: A dictionary to map the word to their corresponding indices
 
 Place the extracted `.hd5` files in the folder `caption data`.
 
-For more information on the preperation of this dataset, see the folder `data preperation`. The previous captions are embedded first using Google's Universal Sentence Encoder available at TensorFlow Hub [here](https://tfhub.dev/google/universal-sentence-encoder/2) and are loaded to the model for faster processing. You can find how to extract the features from the sentence in the folder `data preperation`. If you would like to implement your own DAN, use the following code (also provided in `util/dan.py`) which makes use of the GLoVe word embeddings. You can download the 300-d 6B trained word vectors from [here](https://nlp.stanford.edu/projects/glove/) for use in this function. Moreover, you may ignore the `load embedding` function if you'd like to train the word vectors from scratch using `nn.Embedding`:
+For more information on the preperation of this dataset, see the folder `data preperation`. The previous captions are embedded first using Google's Universal Sentence Encoder available at TensorFlow Hub [here](https://tfhub.dev/google/universal-sentence-encoder/2) and are loaded to the model for faster processing. You can find how to extract the features from the sentence in the folder `data preperation`. If you would like to implement your own DAN, use the code provided in `util/dan.py` which makes use of the GLoVe word embeddings. You can download the 300-d 6B trained word vectors from [here](https://nlp.stanford.edu/projects/glove/) for use in this function. Moreover, you may ignore the `load embedding` function if you'd like to train the word vectors from scratch using `nn.Embedding`.
 
 In our paper, we make use of variational dropout to effectively regularize our language model, which samples one mask and uses it repeatedly across all timesteps. In that case, all timesteps of the language model receive the same dropout mask. This implementation is included here as well. If you change the dimension of your LSTM hidden state, make sure to adjust accordingly in the `getLockedDropooutMask` function. 
 
@@ -67,14 +71,14 @@ The training code is provided in `train_eval.py`, the caption and attention map 
 
 If you use our code or find our paper useful in your research, please acknowledge the following paper:
 
-`
+
 @misc{Sammani2019ModificationNet,
 author = {Sammani, Fawaz and Elsayed, Mahmoud},
 title = {Look and Modify: Modification Networks for Image Captioning},
 journal = {BMVC},
 year = {2019}
 }
-`
+
 
 
 ### References
