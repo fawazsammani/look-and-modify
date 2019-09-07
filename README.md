@@ -20,12 +20,18 @@ Use the instructions from [this](https://github.com/hengyuan-hu/bottom-up-attent
 The generated files should be placed in a folder called `bottom-up features`. 
 
 Then download the caption data folder from [here](https://drive.google.com/open?id=1vuE0Tj1a1wH-Yh2G_i6Mh1lHiIMM9b7V) which includes the following: 
+
 `Caption utilities`: a dictionary file with the following: `{"COCO image name": {"caption": "previous caption to modify", "embedding": [512-d DAN embedding of previous caption], "attributes": [the indiced of the 5 extracted attributes], "image_ids": the COCO image id}`
 `COCO image names with IDs` in the following format: `["COCO_val2014_000000391895.jpg", 391895]`. This is basically for evaluation on COCO.
+
 `Annotations`: The training annotations
+
 `Caption lengths`: The training captions length
+
 `Wordmap`: A dictionary to map the word to their corresponding indices
+
 `Bottom up features mapping to images`: The mapping of the bottom up features to their corresponding COCO images in the corresponding order.
+
 
 For more information on the preperation of this dataset, see the folder `data preperation`. Here, the previous captions are embedded first using Google's Universal Sentence Encoder available at TensorFlow Hub [here](https://tfhub.dev/google/universal-sentence-encoder/2) and are loaded to the model for faster processing. You can find how to extract the features from the sentence in the folder `data preperation`. If you would like to implement your own DAN, use the following code (also provided in `util/dan.py`) which makes use of the GLoVe word embeddings. You can download the 300-d 6B trained word vectors from [here](https://nlp.stanford.edu/projects/glove/) for use in this function. Moreover, you may ignore the `load embedding` function if you'd like to train the word vectors from scratch using `nn.Embedding`:
 
