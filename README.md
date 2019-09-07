@@ -44,7 +44,7 @@ The training code is provided in `train_eval.py`, the caption and attention map 
 Download the COCO 2014 dataset from [here](http://cocodataset.org/#download). In particualr, you'll need the 2014 Training and Validation images. <br/>
 Then download Karpathy's Train/Val/Test Split. You may download it from [here](http://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip).<br/>
 
-If you want to do evaluation on COCO, download the COCO API from [here](https://github.com/cocodataset/cocoapi) if your on Linux or from [here](https://github.com/philferriere/cocoapi) if your on Windows. Then download the COCO caption toolkit from [here](https://github.com/tylin/coco-caption) and re-name the folder to `cococaption`. Don't forget to download java as well. Simply dowload it from [here](https://www.java.com/en/download/) if you don't have it.
+If you want to do evaluation on COCO, download the COCO API from [here](https://github.com/cocodataset/cocoapi) if your on Linux or from [here](https://github.com/philferriere/cocoapi) if your on Windows. Then download the COCO caption toolkit from [here](https://github.com/tylin/coco-caption) and re-name the folder to `cococaptioncider`. Don't forget to download java as well. Simply dowload it from [here](https://www.java.com/en/download/) if you don't have it.
 
 Use the repository [here](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning) to extract the image features to a `.hd5` file.
 
