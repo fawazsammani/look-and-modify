@@ -22,6 +22,7 @@ The generated files should be placed in a folder called `bottom-up features`.
 Then download the caption data folder from [here](https://drive.google.com/open?id=1vuE0Tj1a1wH-Yh2G_i6Mh1lHiIMM9b7V) which includes the following: 
 
 `Caption utilities`: a dictionary file with the following: `{"COCO image name": {"caption": "previous caption to modify", "embedding": [512-d DAN embedding of previous caption], "attributes": [the indiced of the 5 extracted attributes], "image_ids": the COCO image id}`
+
 `COCO image names with IDs` in the following format: `["COCO_val2014_000000391895.jpg", 391895]`. This is basically for evaluation on COCO.
 
 `Annotations`: The training annotations
@@ -51,7 +52,8 @@ Use the repository [here](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Imag
 Then download the caption data folder from [here](https://drive.google.com/open?id=1QOU8wp_Mr-wT5_fcH3vaAPIw8qO7BPRp) which includes the following: 
 
 `Caption utilities`: a dictionary file with the following: `{"COCO image name": {"caption": "previous caption to modify", "embedding": [512-d DAN embedding of previous caption], "attributes": [the indiced of the 5 extracted attributes], "image_ids": the COCO image id}`
-`COCO image names in the corresponding order. 
+
+`COCO image names` in the corresponding order 
 
 `Annotations`: The training annotations
 
