@@ -71,7 +71,7 @@ year = {2019}
 `
 
 ### References
-This code is adopted from my [Adaptive Attention](https://github.com/fawazsammani/knowing-when-to-look-adaptive-attention) repository and from [sgrvinod](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning) implementation on "Show, Attend and Tell. 
+This code is adopted from my [Adaptive Attention](https://github.com/fawazsammani/knowing-when-to-look-adaptive-attention) repository and from [sgrvinod](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning) implementation on "Show, Attend and Tell". 
 
 
 
