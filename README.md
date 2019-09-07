@@ -72,12 +72,12 @@ The training code is provided in `train_eval.py`, the caption and attention map 
 If you use our code or find our paper useful in your research, please acknowledge the following paper:
 
 
-`@misc{Sammani2019ModificationNet,`
-`author = {Sammani, Fawaz and Elsayed, Mahmoud},`
-`title = {Look and Modify: Modification Networks for Image Captioning},`
-`journal = {BMVC},`
-`year = {2019}`
-`}`
+`@misc{Sammani2019ModificationNet,<br/>
+author = {Sammani, Fawaz and Elsayed, Mahmoud},<br/>
+title = {Look and Modify: Modification Networks for Image Captioning},<br/>
+journal = {BMVC},<br/>
+year = {2019}
+}`
 
 
 
