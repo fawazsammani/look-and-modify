@@ -69,9 +69,13 @@ If you use our code or find our paper useful in your research, please acknowledg
 
 `
 @misc{Sammani2019ModificationNet,
+
 author = {Sammani, Fawaz and Elsayed, Mahmoud},
+
 title = {Look and Modify: Modification Networks for Image Captioning},
+
 journal = {BMVC},
+
 year = {2019}
 }
 `
