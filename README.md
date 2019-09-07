@@ -10,7 +10,7 @@ Python 3.6+ and PyTorch 0.4+
 Download the COCO 2014 dataset from [here](http://cocodataset.org/#download). In particualr, you'll need the 2014 Training and Validation images. <br/>
 Then download Karpathy's Train/Val/Test Split. You may download it from [here](http://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip).<br/>
 
-If you want to do evaluation on COCO, download the COCO API from [here](https://github.com/cocodataset/cocoapi) if your on Linux or from [here](https://github.com/philferriere/cocoapi) if your on Windows. Then download the COCO caption toolkit from [here](https://github.com/tylin/coco-caption) and re-name the folder to `cococaption`. Don't forget to download java as well. Simply dowload it from [here](https://www.java.com/en/download/) if you don't have it.
+If you want to do evaluation on COCO, download the COCO API from [here](https://github.com/cocodataset/cocoapi) if your on Linux or from [here](https://github.com/philferriere/cocoapi) if your on Windows. Then download the COCO caption toolkit from [here](https://github.com/tylin/coco-caption) and re-name the folder to `cococaptioncider`. Don't forget to download java as well. Simply dowload it from [here](https://www.java.com/en/download/) if you don't have it.
 
 Next, download the bottom up image features from [here](https://imagecaption.blob.core.windows.net/imagecaption/trainval_36.zip ). If you're modifiying captions from any framework that uses ResNet features (e.g Attend and Tell, Adaptive Attention), then you may skip this step. 
 Use the instructions from [this](https://github.com/hengyuan-hu/bottom-up-attention-vqa) repo to extract the features and indices. 
