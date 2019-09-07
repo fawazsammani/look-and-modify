@@ -69,6 +69,17 @@ In our paper, we make use of variational dropout to effectively regularize our l
 
 The training code is provided in `train_eval.py`, the caption and attention map visualization in `vis.py` and testing captions evaluation in `test eval`. The attribute loss and the DAN implementation is in `util` folder. 
 
+If you use our code or find our paper useful in your research, please acknowledge the following paper:
+
+```
+@misc{Sammani2019ModificationNet,
+author = {Sammani, Fawaz and Elsayed, Mahmoud},
+title = {Look and Modify: Modification Networks for Image Captioning},
+journal = {BMVC},
+year = {2019}
+}
+```
+
 ### References
 This code is adopted from my [Adaptive Attention](https://github.com/fawazsammani/knowing-when-to-look-adaptive-attention) repository and from [sgrvinod](https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning) implementation on "Show, Attend and Tell". 
 
