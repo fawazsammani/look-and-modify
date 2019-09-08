@@ -1,5 +1,5 @@
 ## Look and Modify: Modification Networks for Image Captioning 
-This is the official implementation of our BMVC2019 paper [Look and Modify: Modification Networks for Image Captioning](https://drive.google.com/open?id=11hPwGuAoEbihVC49MN3roDkPuSI0tYbI)
+This is the official implementation of our BMVC2019 paper [Look and Modify: Modification Networks for Image Captioning](https://bmvc2019.org/wp-content/uploads/papers/0597-paper.pdf)
 
 ![demo](https://user-images.githubusercontent.com/30661597/61649073-4cf21d00-ace3-11e9-8b71-0648a879c60c.png)
 
