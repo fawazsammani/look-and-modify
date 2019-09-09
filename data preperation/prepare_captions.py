@@ -108,6 +108,7 @@ with open(os.path.join(output_folder, 'TEST' + '_names_' + dataset + '.json'), '
 with open(os.path.join(output_folder, 'WORDMAP_' + dataset + '.json'), 'r') as j:
     word_map = json.load(j)
 
+    
 for impaths, imcaps, split in [(train_image_paths, train_image_captions, 'TRAIN'),
                                (val_image_paths, val_image_captions, 'VAL'),
                                (test_image_paths, test_image_captions, 'TEST')]:
