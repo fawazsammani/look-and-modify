@@ -37,7 +37,7 @@ For more information on the preperation of this dataset, see the folder `data pr
 
 In our paper, we make use of variational dropout to effectively regularize our language model, which samples one mask and uses it repeatedly across all timesteps. In that case, all timesteps of the language model receive the same dropout mask. This implementation is included here as well. If you change the dimension of your LSTM hidden state, make sure to adjust accordingly in the `getLockedDropooutMask` function. 
 
-The training code is provided in `train_eval.py`, the caption and attention map visualization in `vis.py` and testing captions evaluation in `test eval`. The attribute loss and the DAN implementation is in `util` folder. 
+The training code is provided in `train_eval.py`, the caption and attention map visualization in `vis.py` and testing captions evaluation in `test eval`. The DAN implementation is in `dan` folder. 
 
 ## Instructions for using ResNet features and modifying captions from other models
 
@@ -66,7 +66,7 @@ For more information on the preperation of this dataset, see the folder `data pr
 
 In our paper, we make use of variational dropout to effectively regularize our language model, which samples one mask and uses it repeatedly across all timesteps. In that case, all timesteps of the language model receive the same dropout mask. This implementation is included here as well. If you change the dimension of your LSTM hidden state, make sure to adjust accordingly in the `getLockedDropooutMask` function. 
 
-The training code is provided in `train_eval.py`, the caption and attention map visualization in `vis.py` and testing captions evaluation in `test eval`. The attribute loss and the DAN implementation is in `util` folder. 
+The training code is provided in `train_eval.py`, the caption and attention map visualization in `vis.py` and testing captions evaluation in `test eval`. The DAN implementation is in `dan` folder. 
 
 </br>
 
