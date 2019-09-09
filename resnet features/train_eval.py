@@ -435,6 +435,7 @@ def train(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_
 
         loss = criterion(scores, targets)
 	
+	# Add attribute loss term if specified for usage. Note: This will greatly increase the training time
 	if attribute_loss:
 		freq = calculate_freq(prd_mtx, sentence_attr)
 		att_loss = np.exp((-2/3) * freq)
