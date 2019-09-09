@@ -146,7 +146,19 @@ def save_checkpoint(epoch, epochs_since_improvement, encoder, decoder, encoder_o
     # If this checkpoint is the best so far, store a copy so it doesn't get overwritten by a worse checkpoint
     if is_best:
         torch.save(state, 'BEST_' + filename)
-
+	
+def calculate_freq(prd_mtx, sentence_attr):
+    """
+    calculates frequency of attributes in the generated caption for the attribute loss term in loss function
+    prd_mtx of shape: (batch_size, max_deode_len)
+    sentence_attr of shape: (batch_size, 5)
+    """
+    freq = 0
+    for i in range(prd_mtx.shape[0]):
+        for j in range(prd_mtx.shape[1]):
+            if prd_mtx[i][j] in sentence_attr[i]:
+                freq+=1
+    return freq / prd_mtx.shape[0]
 
 class AverageMeter(object):
     
@@ -362,6 +374,7 @@ class DecoderWithAttention(nn.Module):
         locked_mask = locked_mask.to(device)
         # Create tensors to hold word predicion scores
         predictions = torch.zeros(batch_size, max(decode_lengths), vocab_size).to(device)
+	prd_mtx = torch.zeros(batch_size, max(decode_lengths), dtype = torch.long).to(device)  
 
         
         for t in range(max(decode_lengths)):
@@ -384,8 +397,11 @@ class DecoderWithAttention(nn.Module):
             add_residual = residual + known
             preds = self.fc2(self.dropout(add_residual))  # (batch_size_t, vocab_size)
             predictions[:batch_size_t, t, :] = preds
+	    _, word_idx = torch.max(preds, 1)
+    	    prd_mtx[:batch_size_t,t] = word_idx
 
-        return predictions,encoded_captions, decode_lengths, sort_ind
+        return predictions,encoded_captions, decode_lengths, sort_ind, prd_mtx
+
 
 
 def train(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_optimizer, epoch):
@@ -406,7 +422,7 @@ def train(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_
         sentence_attr = sentence_attr.to(device)
 
 
-        scores, caps_sorted, decode_lengths, sort_ind = decoder(sentence_attr, sentence_embed, image_features, caps, caplens)
+        scores, caps_sorted, decode_lengths, sort_ind, prd_mtx = decoder(sentence_attr, sentence_embed, image_features, caps, caplens)
   
         
         # Since we decoded starting with <start>, the targets are all words after <start>, up to <end>
@@ -418,6 +434,12 @@ def train(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_
         targets, _ = pack_padded_sequence(targets, decode_lengths, batch_first=True)
 
         loss = criterion(scores, targets)
+	
+	if attribute_loss:
+		freq = calculate_freq(prd_mtx, sentence_attr)
+		att_loss = np.exp((-2/3) * freq)
+		if att_loss > 0.069:
+			loss+= (att_loss_alpha * att_loss)
         
         # Back prop.
         decoder_optimizer.zero_grad()
@@ -612,6 +634,8 @@ print_freq = 100  # print training/validation stats every __ batches
 checkpoint = None  # path to checkpoint, None if none
 fine_tune_encoder = False
 annFile = 'cococaptioncider/annotations/captions_val2014.json'  # Location of validation annotations
+att_loss_alpha = 0.4
+attribute_loss = False
 
 # Read word map
 with open('caption data/WORDMAP_coco.json', 'r') as j:
