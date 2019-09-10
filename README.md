@@ -4,7 +4,7 @@ This is the official implementation of our BMVC2019 paper [Look and Modify: Modi
 ![demo](https://user-images.githubusercontent.com/30661597/61649073-4cf21d00-ace3-11e9-8b71-0648a879c60c.png)
 
 ## Requirements
-Python 3.6+ and PyTorch 0.4+
+Python 3.6 and PyTorch 0.4
 
 ## Instructions for using Bottom-Up features and modifying captions from Top-Down model
 Download the COCO 2014 dataset from [here](http://cocodataset.org/#download). In particualr, you'll need the 2014 Training and Validation images. <br/>
