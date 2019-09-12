@@ -1,3 +1,7 @@
+"""
+Script to evaulate on Karpathy's Test Split
+"""
+
 import os
 import numpy as np
 import h5py
