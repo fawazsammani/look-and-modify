@@ -18,7 +18,7 @@ class DAN(nn.Module):
         self.tanh = nn.Tanh()
         self.load_embeddings()
         
-    def forward(word_ids):
+    def forward(self,word_ids):
         """
         word_ids: the word indices from the MLP output of the transferred model of shape (batch_size, words)
         """
