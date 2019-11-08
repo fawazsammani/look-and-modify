@@ -70,7 +70,7 @@ The training code is provided in `train_eval.py`, the caption and attention map 
 
 </br>
 
-If you use our code or find our paper useful in your research, please acknowledge the following paper:
+If you use our code or find our paper useful in your research, please acknowledge:
 
 ```
 @misc{Sammani2019ModificationNet,
